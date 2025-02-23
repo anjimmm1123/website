@@ -1,89 +1,278 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Growtopia - Dashboard</title>
-    <link rel="stylesheet" href="/base.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Login Dashboard</title>
+    <link rel="icon" type="image/png" href="https://s3.eu-west-1.amazonaws.com/cdn.growtopiagame.com/website/resources/assets/images/growtopia.ico" sizes="16x16">
+    <style>
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .modal-backdrop + div {
+            overflow: auto;
+        }
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        * {
+            margin: 0;padding: 0;
+            font-family: "Roboto", serif;
+            font-weight: 500;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            box-shadow: 
+                2px 2px 0 #134357, 
+                inset 2px 2px 0 #134357;
+            padding: 10px;
+            background-color: #1e8fb4b7;
+            border: 2px solid #b0eaff;
+            border-radius: 5px;
+            color: #FEE6BA;
+            width: 80vw !important;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+        }
+        .title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .input {
+            all: unset;
+            display: block;
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            background-color: #1d9bc5be;
+            border: 2px solid #28b9ee;
+            border-radius: 5px;
+            color: #fefefe;
+            box-shadow: 
+                2px 2px 0 #1343576e, 
+                inset 2px 2px 0 #13435777;
+            box-sizing: border-box;
+        }
+        .input:focus {
+            outline: none;
+            border-color: #007BFF;
+            box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+        }
+        .btn-wrapper {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            flex: 1;
+            box-sizing: border-box;
+        }
+        button {
+            outline: none;
+            border: none;
+            font-size: 1.5rem;
+            padding: 5px;
+            color: #fefefe;
+            flex: 1;
+            background: #e9a82f;
+            border-radius: 5px;
+        }
+        button:not(:first-child) {
+            background: #abc9d6;
+        }
+    </style>
 </head>
-<body class="bg-transparent">
-    <div class="w-screen h-screen flex justify-center items-center">
-        <div class="border-2 border-[#2b4d6d] p-5 text-[#eeeeee] bg-gradient-to-br min-w-[50vw] from-blue-950 to-[#2b4d6d] rounded-lg shadow-xl shadow-[#2b4d6d]">
-            <h1 class="text-center text-2xl font-bold"><%= cnf.name %> Dashboard</h1>
-            <p class="opacity-70">You are now entering the login page of this server. Please enter your <span style="color:#fefefe" class="font-semibold">GrowID</span> and <span style="color:#fefefe" class="font-semibold">Password</span> if you already have an account, or log in as a guest.</p>
-            <button type="button"
-                class="btn btn-primary hidden"
-                data-toggle="modal"
-                id="modalButton"
-                data-target="#modalShow"
-                data-backdrop="static"
-                data-keyboard="false"
-                hidden
-            ></button>
-            <form 
-            action="/player/growid/login/validate" accept-charset="UTF-8"
-            role="form"
-            required="required"
-            autocomplete="off" method="post" class="mt-3">
-                <div class="mb-1">
-                    <input
-                        name="_token"
-                        type="hidden"
-                        value=""
-                    />
-                    <label for="loginGrowId" class="block text-white text-md">GrowID:</label>
-                    <div class="flex items-center border-2 border-[#136a92] rounded bg-[#2b4d6d] px-3 py-1 gap-2">
-                        <i class="fas fa-user text-white mr-1 text-md"></i>
-                        <input type="text" name="growId" id="loginGrowId" class="w-full bg-[#2b4d6d] text-white text-md placeholder-white focus:outline-none" placeholder="Enter your growid" required>
-                    </div>
-                </div>
-                <div class="mb-1">
-                    <label for="loginPassword" class="block text-white text-md">Password</label>
-                    <div class="flex items-center border-2 border-[#136a92] rounded bg-[#2b4d6d] px-3 py-1 gap-2">
-                        <i class="fas fa-lock text-white mr-1 text-md"></i>
-                        <input type="password" name="password" id="loginPassword" class="w-full bg-[#2b4d6d] text-white text-md placeholder-white focus:outline-none" placeholder="Enter your password" required>
-                        <button type="button" id="toggleLogPassword" class="text-white ml-2 focus:outline-none text-xs">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="flex justify-end items-center flex-col md:flex-row gap-2 mt-3">
-                    <button id="regisButton" class="px-2 py-1 rounded bg-[#00ff00] text-green-800 text-xl font-bold w-full hover:bg-[#06dd11] transition duration-300 ease-in-out transform" onclick="regis()">Register</button>
-                    <button id="loginButton" type="submit" class="px-2 py-1 rounded bg-[#00b8ff] text-white text-xl font-bold w-full hover:bg-[#06a4dd] transition duration-300 ease-in-out transform">Login</button>
-                </div>
-            </form>
+<body>
+    <div class="card">
+        <div class="title">
+            <img src="https://gtpshax.github.io/DialogGTPS/src/assets/items/32.png" alt="32">
+            <h1 style="color: #fefefe; font-weight: 700;">Welcome to <span id="server">Growtopia Private Server</span></h1>
         </div>
+        <p class="desk">You are now entering the login page of this server. Please enter your <span style="color:#fefefe">GrowID</span> and <span style="color:#fefefe">Password</span> if you already have an account, or log in as a guest.</p>
+        <button type="button"
+            class="btn btn-primary hidden"
+            data-toggle="modal"
+            id="modalButton"
+            data-target="#modalShow"
+            data-backdrop="static"
+            data-keyboard="false"
+            hidden
+        ></button>
+        <form action="/player/growid/login/validate" accept-charset="UTF-8"
+        class=""
+        role="form"
+        required="required"
+        autocomplete="off" method="post" style="margin-top: 10px;">
+            <input
+                name="_token"
+                type="hidden"
+                value=""
+            />
+            <label>
+                GrowID:
+                <input type="text" class="input" id="login-name" name="growId" required>
+            </label>
+            <br>
+            <label>
+                <p>Password:</p>
+                <input type="password" class="input" id="password" name="password" required>
+            </label>
+            <div class="btn-wrapper">
+                <button type="button" onclick="regis()">Register/Reset</button>
+                <button type="submit">Login</button>
+            </div>
+        </form>
     </div>
-
     <script>
-        const growId = document.getElementById("loginGrowId");
-        const password = document.getElementById("loginPassword");
+        const params = new URLSearchParams(window.location.search);
+        const newData = decodeURIComponent(params.get('data'));
+        const growId = document.getElementById("login-name");
         const form = document.querySelector("form");
-        
-        document.getElementById('toggleLogPassword').addEventListener('click', function () {
-            const LpasswordField = document.getElementById('loginPassword')
-            const LpasswordFieldType = LpasswordField.getAttribute('type');
-            if (LpasswordFieldType === 'password') {
-                LpasswordField.setAttribute('type', 'text');
-                this.innerHTML = '<i class="fas fa-eye-slash"></i>';
-            } else {
-                LpasswordField.setAttribute('type', 'password');
-                this.innerHTML = '<i class="fas fa-eye"></i>';
-            }
-        });
+        const server = decodeURIComponent(params.get('server'));
+        let nameServer = document.getElementById("server");
+        if (server.length && server && server != "undefined" && server != "null") nameServer.innerHTML = server;
+    
+        let data = localStorage.getItem("dataPlayer");
+    
+        if ((!get("tankIDName", data) || !get("tankIDPass", data)) || (get("tankIDName", newData) && get("tankIDPass", newData))) data = newData;
+        if (!data.includes("klv")) data = "klv|\\n" + data;
+        if (!data.includes("tankIDPass")) data = "tankIDPass|\\n" + data;
+        if (!data.includes("tankIDName")) data = "tankIDName|\\n" + data;
+    
+        growId.value = get("tankIDName", data);
+        password.value = get("tankIDPass", data);
     
         async function regis() {
-            const token = btoa(`_token=NONE&growId=${growId.value}&password=${password.value}`);
-            window.location.href = "/player/growid/login/validate?data=" + encodeURIComponent(token);
+            data = set("tankIDName", "", data);
+            data = set("tankIDPass", "", data);
+            await localStorage.setItem("dataPlayer", data);
+            const token = btoa(`_token=${get("meta", data)}&growId=&password=`);
+            data = token + "\\n" + data;
+            window.location.href = "/player/growid/login/validate?data=" + encodeURIComponent(data);
         }
-
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
+            data = set("tankIDName", growId.value, data);
+            data = set("tankIDPass", password.value, data);
 
-            const token = btoa(`_token=NONE&growId=${growId.value}&password=${password.value}`);
+            const token = btoa(`_token=${get("meta", data)}&growId=${growId.value}&password=${password.value}`);
+            data = token + "\\n" + data;
+            await localStorage.setItem("dataPlayer", data);
 
-            window.location.href = "/player/growid/login/validate?data=" + encodeURIComponent(token);
+            window.location.href = "/player/growid/login/validate?data=" + encodeURIComponent(data);
+        });
+    
+        function get(key, token) {
+            try {
+                // Pisahkan token berdasarkan pemisah '\\n' untuk mendapatkan data yang lebih akurat
+                let dataa = token.split("\\n");
+    
+                // Iterasi untuk mencari key yang cocok dan mengganti nilainya
+                for (let i = 0; i < dataa.length; i++) {
+                    if (dataa[i].includes(key)) {
+                        let tempData = dataa[i].split("|");
+                        if (tempData[0] === key) return tempData[1];
+                    }
+                }
+                return ""; // Kembali kosong jika kunci tidak ditemukan
+            } catch (error) {
+                console.error("Error in get:", error);
+                return ""; // Kembali kosong jika terjadi kesalahan
+            }
+        }
+        function get2(key, token) {
+            try {
+                // Pisahkan token berdasarkan pemisah '\\n' untuk mendapatkan data yang lebih akurat
+                let dataa = token.split("\\\\n");
+    
+                // Iterasi untuk mencari key yang cocok dan mengganti nilainya
+                for (let i = 0; i < dataa.length; i++) {
+                    if (dataa[i].includes(key)) {
+                        let tempData = dataa[i].split("|");
+                        if (tempData[0] === key) return tempData[1];
+                    }
+                }
+                return ""; // Kembali kosong jika kunci tidak ditemukan
+            } catch (error) {
+                console.error("Error in get:", error);
+                return ""; // Kembali kosong jika terjadi kesalahan
+            }
+        }
+    
+        function set(key, newValue, token) {
+            try {
+                // Pisahkan token berdasarkan pemisah '\\n' untuk mendapatkan data yang lebih akurat
+                let dataa = token.split("\\n");
+    
+                // Iterasi untuk mencari key yang cocok dan mengganti nilainya
+                for (let i = 0; i < dataa.length; i++) {
+                    if (dataa[i].includes(key)) {
+                        let tempData = dataa[i].split("|");
+                        if (tempData[0] === key) {
+                            tempData[1] = newValue;
+                            dataa[i] = tempData.join("|");
+                        }
+                    }
+                }
+                return dataa.join("\\n");
+            } catch (error) {
+                console.error("Error in set:", error);
+                return token; // Kembalikan token asli jika terjadi kesalahan
+            }
+        }
+    </script>
+    
+    <script src="https://s3.eu-west-1.amazonaws.com/cdn.growtopiagame.com/website/resources/vendors/jquery/jquery-2.1.4.min.js"></script>
+    <script>
+        let clicked = false;
+        $('a').click(function () {
+            if (!clicked) {
+                clicked = true;
+                return true;
+            }
+            $(this).attr('onclick', 'return false;');
+        });
+
+        $(document).ready(function () {
+            document.onkeydown = (e) => {
+                const disabledKeys = ["F12"];
+                if (disabledKeys.includes(e.key) || (e.ctrlKey && e.shiftKey && disabledKeys.includes(e.key))) {
+                    e.preventDefault();
+                }
+            };
+
+            // $('.close').on('click', function () {
+            //     window.location = '/player/validate/close';
+            // });
+
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    Array.from(mutation.addedNodes).forEach((node) => {
+                        if (node.tagName === 'DIV') {
+                            const sw = window.screen.width;
+                            if (sw < 667) {
+                                $(node).css({
+                                    transform: 'scale(0.75)',
+                                    'transform-origin': '0 0',
+                                    overflow: 'auto',
+                                });
+                            }
+                        }
+                    });
+                });
+            });
+
+            observer.observe(document.body, {
+                childList: true,
+            });
         });
     </script>
 </body>
