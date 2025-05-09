@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4e73df;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#224abe;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="90" fill="url(#grad1)" />
+  
+  <!-- Portrait shape -->
+  <circle cx="100" cy="85" r="40" fill="#f5f5f5" />
+  <path d="M60,145 C60,115 140,115 140,145 L140,190 L60,190 Z" fill="#f5f5f5" />
+  
+  <!-- Face elements -->
+  <circle cx="85" cy="80" r="5" fill="#333" /> <!-- left eye -->
+  <circle cx="115" cy="80" r="5" fill="#333" /> <!-- right eye -->
+  <path d="M90,95 Q100,105 110,95" fill="none" stroke="#333" stroke-width="2" /> <!-- smile -->
+  
+  <!-- Hair -->
+  <path d="M60,75 Q80,40 100,60 Q120,40 140,75 Q120,85 100,70 Q80,85 60,75 Z" fill="#333" />
+  
+  <!-- Tie -->
+  <path d="M95,125 L105,125 L110,150 L100,160 L90,150 L95,125 Z" fill="#e74c3c" />
+  <path d="M95,125 L105,125 L100,135 Z" fill="#c0392b" />
+  
+  <!-- Suit collar -->
+  <path d="M80,145 L100,125 L120,145 L125,125 L120,115 L100,125 L80,115 L75,125 Z" fill="#2c3e50" />
+  
+  <!-- Decorative elements -->
+  <circle cx="160" cy="40" r="15" fill="#fff" opacity="0.3" />
+  <circle cx="40" cy="150" r="10" fill="#fff" opacity="0.2" />
+</svg>

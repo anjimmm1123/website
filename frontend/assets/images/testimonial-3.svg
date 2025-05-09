@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#27ae60;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="90" fill="url(#grad3)" />
+  
+  <!-- Portrait shape -->
+  <circle cx="100" cy="85" r="40" fill="#f5f5f5" />
+  <path d="M60,145 C60,115 140,115 140,145 L140,190 L60,190 Z" fill="#f5f5f5" />
+  
+  <!-- Face elements -->
+  <circle cx="85" cy="80" r="5" fill="#333" /> <!-- left eye -->
+  <circle cx="115" cy="80" r="5" fill="#333" /> <!-- right eye -->
+  <path d="M90,100 Q100,90 110,100" fill="none" stroke="#333" stroke-width="2" /> <!-- neutral expression -->
+  
+  <!-- Hair (short) -->
+  <path d="M70,60 Q100,30 130,60 L130,90 L70,90 Z" fill="#34495e" />
+  
+  <!-- Glasses -->
+  <rect x="75" y="75" width="20" height="10" rx="5" ry="5" fill="none" stroke="#7f8c8d" stroke-width="2" />
+  <rect x="105" y="75" width="20" height="10" rx="5" ry="5" fill="none" stroke="#7f8c8d" stroke-width="2" />
+  <path d="M95,80 L105,80" fill="none" stroke="#7f8c8d" stroke-width="2" />
+  <path d="M75,80 L65,75" fill="none" stroke="#7f8c8d" stroke-width="2" />
+  <path d="M125,80 L135,75" fill="none" stroke="#7f8c8d" stroke-width="2" />
+  
+  <!-- Hoodie -->
+  <path d="M60,145 Q80,115 140,145 L140,190 L60,190 Z" fill="#3498db" />
+  <path d="M85,120 L115,120 L110,140 L90,140 Z" fill="#2980b9" />
+  
+  <!-- Drawstrings -->
+  <path d="M90,140 L85,150" fill="none" stroke="#ecf0f1" stroke-width="2" />
+  <path d="M110,140 L115,150" fill="none" stroke="#ecf0f1" stroke-width="2" />
+  <circle cx="85" cy="150" r="3" fill="#ecf0f1" />
+  <circle cx="115" cy="150" r="3" fill="#ecf0f1" />
+  
+  <!-- Decorative elements -->
+  <circle cx="45" cy="165" r="10" fill="#fff" opacity="0.3" />
+  <circle cx="160" cy="60" r="15" fill="#fff" opacity="0.2" />
+  <circle cx="30" cy="85" r="5" fill="#fff" opacity="0.4" />
+</svg>

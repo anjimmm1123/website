@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="400" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background elements -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4e73df;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#224abe;stop-opacity:0.05" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Decorative shapes -->
+  <circle cx="400" cy="100" r="60" fill="url(#grad1)" />
+  <circle cx="80" cy="350" r="40" fill="url(#grad1)" />
+  <circle cx="450" cy="300" r="30" fill="url(#grad1)" />
+  
+  <!-- Main illustration: School building -->
+  <g transform="translate(250, 200) scale(0.8)">
+    <!-- Building base -->
+    <rect x="-180" y="-80" width="360" height="180" fill="#ecf0f1" />
+    
+    <!-- Roof -->
+    <path d="M-200,-80 L0,-180 L200,-80 Z" fill="#e74c3c" />
+    
+    <!-- Pillars -->
+    <rect x="-160" y="-80" width="20" height="180" fill="#bdc3c7" />
+    <rect x="-80" y="-80" width="20" height="180" fill="#bdc3c7" />
+    <rect x="60" y="-80" width="20" height="180" fill="#bdc3c7" />
+    <rect x="140" y="-80" width="20" height="180" fill="#bdc3c7" />
+    
+    <!-- Steps -->
+    <rect x="-120" y="100" width="240" height="10" fill="#95a5a6" />
+    <rect x="-110" y="110" width="220" height="10" fill="#95a5a6" />
+    <rect x="-100" y="120" width="200" height="10" fill="#95a5a6" />
+    
+    <!-- Main door -->
+    <rect x="-40" y="-10" width="80" height="110" fill="#34495e" />
+    <rect x="-35" y="-5" width="30" height="105" fill="#2c3e50" />
+    <rect x="5" y="-5" width="30" height="105" fill="#2c3e50" />
+    <circle cx="-25" cy="50" r="3" fill="#f1c40f" />
+    <circle cx="25" cy="50" r="3" fill="#f1c40f" />
+    
+    <!-- Windows -->
+    <rect x="-150" y="-50" width="30" height="40" fill="#3498db" />
+    <rect x="-150" y="10" width="30" height="40" fill="#3498db" />
+    <rect x="-70" y="-50" width="30" height="40" fill="#3498db" />
+    <rect x="-70" y="10" width="30" height="40" fill="#3498db" />
+    <rect x="40" y="-50" width="30" height="40" fill="#3498db" />
+    <rect x="40" y="10" width="30" height="40" fill="#3498db" />
+    <rect x="120" y="-50" width="30" height="40" fill="#3498db" />
+    <rect x="120" y="10" width="30" height="40" fill="#3498db" />
+    
+    <!-- Window frames -->
+    <path d="M-150,-30 L-120,-30" stroke="#2980b9" stroke-width="2" />
+    <path d="M-150,10 L-120,10" stroke="#2980b9" stroke-width="2" />
+    <path d="M-135,-50 L-135,10" stroke="#2980b9" stroke-width="2" />
+    <path d="M-135,10 L-135,50" stroke="#2980b9" stroke-width="2" />
+    
+    <path d="M-70,-30 L-40,-30" stroke="#2980b9" stroke-width="2" />
+    <path d="M-70,10 L-40,10" stroke="#2980b9" stroke-width="2" />
+    <path d="M-55,-50 L-55,10" stroke="#2980b9" stroke-width="2" />
+    <path d="M-55,10 L-55,50" stroke="#2980b9" stroke-width="2" />
+    
+    <path d="M40,-30 L70,-30" stroke="#2980b9" stroke-width="2" />
+    <path d="M40,10 L70,10" stroke="#2980b9" stroke-width="2" />
+    <path d="M55,-50 L55,10" stroke="#2980b9" stroke-width="2" />
+    <path d="M55,10 L55,50" stroke="#2980b9" stroke-width="2" />
+    
+    <path d="M120,-30 L150,-30" stroke="#2980b9" stroke-width="2" />
+    <path d="M120,10 L150,10" stroke="#2980b9" stroke-width="2" />
+    <path d="M135,-50 L135,10" stroke="#2980b9" stroke-width="2" />
+    <path d="M135,10 L135,50" stroke="#2980b9" stroke-width="2" />
+    
+    <!-- Sign board -->
+    <rect x="-100" y="-120" width="200" height="40" fill="#3498db" />
+    <text x="0" y="-95" font-family="Arial" font-size="16" fill="#fff" text-anchor="middle">STMIK ENTERPRISE</text>
+    
+    <!-- Flag pole -->
+    <rect x="-190" y="-160" width="5" height="80" fill="#7f8c8d" />
+    <rect x="-190" y="-160" width="30" height="20" fill="#e74c3c" />
+  </g>
+  
+  <!-- Graduation caps floating -->
+  <g transform="translate(420, 110) rotate(15)">
+    <path d="M-15,0 L15,0 L0,-15 Z" fill="#34495e" />
+    <rect x="-15" y="0" width="30" height="5" fill="#34495e" />
+    <path d="M10,0 Q15,5 12,15" stroke="#f1c40f" stroke-width="1.5" fill="none" />
+    <circle cx="12" cy="15" r="2" fill="#f1c40f" />
+  </g>
+  
+  <g transform="translate(70, 300) rotate(-10)">
+    <path d="M-12,0 L12,0 L0,-12 Z" fill="#34495e" />
+    <rect x="-12" y="0" width="24" height="4" fill="#34495e" />
+    <path d="M8,0 Q12,4 10,12" stroke="#f1c40f" stroke-width="1.5" fill="none" />
+    <circle cx="10" cy="12" r="2" fill="#f1c40f" />
+  </g>
+  
+  <!-- Students -->
+  <g transform="translate(100, 200)">
+    <!-- Student 1 -->
+    <circle cx="0" cy="0" r="10" fill="#f39c12" /> <!-- head -->
+    <path d="M0,10 L0,35" stroke="#34495e" stroke-width="2" /> <!-- body -->
+    <path d="M0,15 L-15,25" stroke="#34495e" stroke-width="2" /> <!-- left arm -->
+    <path d="M0,15 L15,25" stroke="#34495e" stroke-width="2" /> <!-- right arm -->
+    <path d="M0,35 L-10,55" stroke="#34495e" stroke-width="2" /> <!-- left leg -->
+    <path d="M0,35 L10,55" stroke="#34495e" stroke-width="2" /> <!-- right leg -->
+    <rect x="-5" y="-5" width="10" height="3" fill="#27ae60" /> <!-- glasses -->
+  </g>
+  
+  <g transform="translate(140, 210)">
+    <!-- Student 2 -->
+    <circle cx="0" cy="0" r="9" fill="#e74c3c" /> <!-- head -->
+    <path d="M0,9 L0,32" stroke="#34495e" stroke-width="2" /> <!-- body -->
+    <path d="M0,15 L-12,20" stroke="#34495e" stroke-width="2" /> <!-- left arm -->
+    <path d="M0,15 L12,20" stroke="#34495e" stroke-width="2" /> <!-- right arm -->
+    <path d="M0,32 L-8,50" stroke="#34495e" stroke-width="2" /> <!-- left leg -->
+    <path d="M0,32 L8,50" stroke="#34495e" stroke-width="2" /> <!-- right leg -->
+  </g>
+  
+  <g transform="translate(400, 250)">
+    <!-- Teacher -->
+    <circle cx="0" cy="0" r="12" fill="#3498db" /> <!-- head -->
+    <path d="M0,12 L0,40" stroke="#2c3e50" stroke-width="3" /> <!-- body -->
+    <path d="M0,20 L-20,15" stroke="#2c3e50" stroke-width="3" /> <!-- left arm pointing -->
+    <path d="M0,20 L15,30" stroke="#2c3e50" stroke-width="3" /> <!-- right arm -->
+    <path d="M0,40 L-10,65" stroke="#2c3e50" stroke-width="3" /> <!-- left leg -->
+    <path d="M0,40 L10,65" stroke="#2c3e50" stroke-width="3" /> <!-- right leg -->
+    <rect x="-8" y="-4" width="16" height="3" fill="#2c3e50" /> <!-- glasses -->
+  </g>
+  
+  <!-- Books floating -->
+  <g transform="translate(350, 150) rotate(10)">
+    <rect x="-25" y="-5" width="50" height="10" rx="1" fill="#e74c3c" />
+  </g>
+  
+  <g transform="translate(360, 160) rotate(-5)">
+    <rect x="-20" y="-5" width="40" height="10" rx="1" fill="#3498db" />
+  </g>
+  
+  <g transform="translate(355, 170) rotate(8)">
+    <rect x="-22" y="-5" width="44" height="10" rx="1" fill="#2ecc71" />
+  </g>
+</svg>

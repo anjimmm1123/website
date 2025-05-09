@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background elements -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4e73df;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#224abe;stop-opacity:0.1" />
+    </linearGradient>
+    <clipPath id="screenMask">
+      <rect x="160" y="78" width="280" height="180" rx="8" ry="8" />
+    </clipPath>
+  </defs>
+  
+  <!-- Decorative shapes -->
+  <circle cx="100" cy="320" r="50" fill="url(#grad1)" />
+  <circle cx="500" cy="80" r="60" fill="url(#grad1)" />
+  <circle cx="50" cy="100" r="20" fill="url(#grad1)" />
+  <circle cx="550" cy="250" r="30" fill="url(#grad1)" />
+  
+  <!-- Laptop base -->
+  <rect x="150" y="260" width="300" height="12" rx="2" ry="2" fill="#2c3e50" />
+  <path d="M180 260 L150 280 L450 280 L420 260 Z" fill="#34495e" />
+  
+  <!-- Laptop body -->
+  <rect x="150" y="78" width="300" height="182" rx="10" ry="10" fill="#34495e" />
+  <rect x="160" y="78" width="280" height="180" rx="8" ry="8" fill="#ecf0f1" />
+  
+  <!-- Screen content -->
+  <g clip-path="url(#screenMask)">
+    <!-- Code editor -->
+    <rect x="160" y="78" width="280" height="180" fill="#282c34" />
+    
+    <!-- Code editor header with tabs -->
+    <rect x="160" y="78" width="280" height="30" fill="#21252b" />
+    <rect x="165" y="78" width="80" height="30" fill="#282c34" />
+    <text x="195" y="98" font-family="monospace" font-size="12" fill="#abb2bf">index.php</text>
+    
+    <!-- Code lines -->
+    <g font-family="monospace" font-size="11">
+      <!-- Line numbers -->
+      <rect x="160" y="108" width="20" height="150" fill="#21252b" />
+      <text x="164" y="125" fill="#636d83">1</text>
+      <text x="164" y="145" fill="#636d83">2</text>
+      <text x="164" y="165" fill="#636d83">3</text>
+      <text x="164" y="185" fill="#636d83">4</text>
+      <text x="164" y="205" fill="#636d83">5</text>
+      <text x="164" y="225" fill="#636d83">6</text>
+      <text x="164" y="245" fill="#636d83">7</text>
+      
+      <!-- PHP code -->
+      <text x="185" y="125" fill="#c678dd">&lt;?php</text>
+      <text x="185" y="145"><tspan fill="#e06c75">$title</tspan><tspan fill="#abb2bf"> = </tspan><tspan fill="#98c379">'STMIK Enterprise'</tspan><tspan fill="#abb2bf">;</tspan></text>
+      <text x="185" y="165" fill="#abb2bf">require_once </text><tspan fill="#98c379">'header.php'</tspan><tspan fill="#abb2bf">;</tspan></text>
+      <text x="185" y="185"><tspan fill="#c678dd">function</tspan><tspan fill="#61afef"> displayWelcome</tspan><tspan fill="#abb2bf">() {</tspan></text>
+      <text x="195" y="205"><tspan fill="#c678dd">echo</tspan><tspan fill="#98c379"> 'Welcome to our campus!'</tspan><tspan fill="#abb2bf">;</tspan></text>
+      <text x="185" y="225" fill="#abb2bf">}</text>
+      <text x="185" y="245" fill="#abb2bf">?&gt;</text>
+    </g>
+  </g>
+  
+  <!-- Laptop screen frame -->
+  <rect x="150" y="78" width="300" height="182" rx="10" ry="10" fill="none" stroke="#2c3e50" stroke-width="2" />
+  
+  <!-- Graduate hat (flying) -->
+  <g transform="translate(380, 60) rotate(15)">
+    <!-- Hat base -->
+    <rect x="-35" y="-5" width="70" height="10" fill="#34495e" />
+    
+    <!-- Hat top -->
+    <path d="M-30,-5 L0,-35 L30,-5 Z" fill="#34495e" />
+    
+    <!-- Tassel -->
+    <path d="M30,-5 Q45,0 40,20" fill="none" stroke="#f1c40f" stroke-width="2" />
+    <circle cx="40" cy="20" r="4" fill="#f1c40f" />
+  </g>
+  
+  <!-- Books -->
+  <g transform="translate(100, 200)">
+    <rect x="-30" y="-15" width="60" height="30" rx="2" ry="2" fill="#e74c3c" />
+    <rect x="-25" y="-30" width="50" height="20" rx="2" ry="2" fill="#3498db" />
+    <rect x="-20" y="-42" width="40" height="15" rx="2" ry="2" fill="#2ecc71" />
+  </g>
+  
+  <!-- Floating gears (technology symbols) -->
+  <g transform="translate(500, 180)">
+    <!-- Gear 1 -->
+    <circle cx="0" cy="0" r="15" fill="#bdc3c7" />
+    <circle cx="0" cy="0" r="7" fill="#7f8c8d" />
+    <path d="M0,-15 L4,-4 L-4,-4 Z" fill="#7f8c8d" />
+    <path d="M0,15 L4,4 L-4,4 Z" fill="#7f8c8d" />
+    <path d="M-15,0 L-4,4 L-4,-4 Z" fill="#7f8c8d" />
+    <path d="M15,0 L4,4 L4,-4 Z" fill="#7f8c8d" />
+  </g>
+  
+  <g transform="translate(470, 150)">
+    <!-- Gear 2 -->
+    <circle cx="0" cy="0" r="10" fill="#95a5a6" />
+    <circle cx="0" cy="0" r="5" fill="#7f8c8d" />
+    <path d="M0,-10 L3,-3 L-3,-3 Z" fill="#7f8c8d" />
+    <path d="M0,10 L3,3 L-3,3 Z" fill="#7f8c8d" />
+    <path d="M-10,0 L-3,3 L-3,-3 Z" fill="#7f8c8d" />
+    <path d="M10,0 L3,3 L3,-3 Z" fill="#7f8c8d" />
+  </g>
+  
+  <!-- Floating cloud with digital elements -->
+  <g transform="translate(80, 120)">
+    <path d="M-30,10 Q-40,0 -30,-10 Q-20,-20 0,-15 Q15,-30 30,-15 Q50,-20 45,0 Q60,10 45,20 Q30,30 15,20 Q0,30 -15,20 Q-40,25 -30,10 Z" fill="#ecf0f1" />
+    <circle cx="-10" cy="5" r="3" fill="#3498db" />
+    <circle cx="15" cy="0" r="2" fill="#3498db" />
+    <circle cx="5" cy="10" r="2" fill="#3498db" />
+    <path d="M-10,5 L15,0 L5,10 Z" fill="none" stroke="#3498db" stroke-width="1" />
+  </g>
+</svg>
